@@ -1,0 +1,12 @@
+Esta librearía fue editada para una función especifica de traer un 
+Entero de 16 bits desde la memoria o un numero por default si no cumplia con 
+unas condiciones
+uint16_t readInt( int idx, int user ){
+		uint16_t num = 0;		
+		num = num | EERef( idx ) << 8;		
+		num = num | EERef( idx + 1 );
+		if (num == 0 || num == 65535){
+			return user;
+		}
+		return num;
+	}
